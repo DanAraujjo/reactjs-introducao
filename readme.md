@@ -254,3 +254,9 @@ import TechList from "./components/TechList";
 
 <TechList />
 ```
+
+## Debugando React com DevTools
+
+Instale a Extensão do Chrome **React Developer Tools**
+
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=pt-BR

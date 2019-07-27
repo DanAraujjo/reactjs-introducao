@@ -1,6 +1,6 @@
 # Introdução ao ReactJs
 
-### Configurando estrutura
+## Configurando estrutura
 
 Execute os comandos:
 
@@ -85,3 +85,47 @@ Adcione ao package.json
 ```
 
 > Execute yarn dev e veja o projeto funcionando
+
+## Criando componente raiz
+
+Altere o arquivo **public/index.html**
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ReactJs</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="./bundle.js"></script>
+  </body>
+</html>
+```
+
+Altere tambem o aquivo **src/index.js**
+
+```
+import React from "react";
+import { render } from "react-dom";
+
+import App from "./App";
+
+render(<App />, document.getElementById("app"));
+```
+
+Crie o arquivo **src/App.js**
+
+```
+import React from "react";
+
+function App() {
+  return <h1>Hello Rocket</h1>;
+}
+
+export default App;
+```

@@ -201,3 +201,50 @@ function App() {
 export default App;
 
 ```
+
+## Class Components
+
+Execute o comando
+
+```
+yarn add @babel/plugin-proposal-class-properties -D
+```
+
+Inclua no arquivo **babel.config.js**
+
+```
+plugins: ["@babel/plugin-proposal-class-properties"]
+```
+
+Crie o arquivo **components/TechList.js**
+
+```
+import React, { Component } from "react";
+
+class TechList extends Component {
+  state = {
+    techs: ["Node Js", "React Js", "React Native"]
+  };
+
+  render() {
+    return (
+      <ul>
+        {this.state.techs.map(tech => (
+          <li>{tech}</li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+export default TechList;
+
+```
+
+Faça a importação do _component_ no arquivo **src/App.js**
+
+```
+import TechList from "./components/TechList";
+
+<TechList />
+```

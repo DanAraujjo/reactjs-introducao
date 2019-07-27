@@ -9,7 +9,7 @@ function App() {
   return (
     //fragment
     <>
-      <h1>Hello word</h1>
+      <h1>Introdução ReactJs</h1>
       <img width={100} src={profile} />;
       <TechList />
     </>

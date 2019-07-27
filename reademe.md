@@ -1,0 +1,87 @@
+# Introdução ao ReactJs
+
+### Configurando estrutura
+
+Execute os comandos:
+
+```
+yarn add @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli -D
+yarn add babel-loader -D
+yarn add webpack-dev-server -D
+yarn add react react-dom
+```
+
+Crie os arquivos:
+
+- public/index.html
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ReactJs</title>
+  </head>
+  <body>
+    <h1>Hello Word!!</h1>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
+```
+
+- src/index.js
+
+```
+const soma = (a, b) => a + b;
+
+alert(soma(1, 3));
+```
+
+- babel.config.js
+
+```
+module.exports = {
+  presets: ["@babel/preset-env", "@babel/preset-react"]
+};
+```
+
+- webpack.config.js
+
+```
+const path = require("path");
+
+module.exports = {
+  entry: path.resolve(__dirname, "src", "index.js"),
+  output: {
+    path: path.resolve(__dirname, "public"),
+    filename: "bundle.js"
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, "public")
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
+    ]
+  }
+};
+```
+
+Adcione ao package.json
+
+```
+"scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development"
+  }
+```
+
+> Execute yarn dev e veja o projeto funcionando

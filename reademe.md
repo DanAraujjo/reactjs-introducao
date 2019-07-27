@@ -13,7 +13,7 @@ yarn add react react-dom
 
 Crie os arquivos:
 
-- public/index.html
+- **public/index.html**
 
 ```
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ Crie os arquivos:
 </html>
 ```
 
-- src/index.js
+- **src/index.js**
 
 ```
 const soma = (a, b) => a + b;
@@ -39,7 +39,7 @@ const soma = (a, b) => a + b;
 alert(soma(1, 3));
 ```
 
-- babel.config.js
+- **babel.config.js**
 
 ```
 module.exports = {
@@ -47,7 +47,7 @@ module.exports = {
 };
 ```
 
-- webpack.config.js
+- **webpack.config.js**
 
 ```
 const path = require("path");
@@ -75,7 +75,7 @@ module.exports = {
 };
 ```
 
-Adcione ao package.json
+Adcione ao **package.json**
 
 ```
 "scripts": {
@@ -128,4 +128,37 @@ function App() {
 }
 
 export default App;
+```
+
+## Importando CSS
+
+Execute o comando
+
+```
+yarn add style-loader css-loader -D
+```
+
+Adcione uma nova rule ao **webpack.config.js**
+
+```
+      {
+        test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+      }
+```
+
+Crie o arquivo **src/App.css**
+
+```
+body {
+  background: #7159c1;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+```
+
+Inclua no **src/App.js**
+
+```
+import "./App.css";
 ```

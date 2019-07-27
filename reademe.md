@@ -162,3 +162,42 @@ Inclua no **src/App.js**
 ```
 import "./App.css";
 ```
+
+## Importando imagens
+
+Execute o comando
+
+```
+yarn add file-loader -D
+```
+
+Adcione uma nova rule ao **webpack.config.js**
+
+```
+      {
+        test: /.*\.(gif|png|jpe?g)$/i,
+        use: {
+          loader: "file-loader"
+        }
+      }
+```
+
+Crie uma pasta **src/assets** e coloque um aquivo lá.
+
+Faça a importação da imagem no arquivo **src/App.js**
+
+> Exemplo
+
+```
+import React from "react";
+import "./App.css";
+
+import profile from "./assets/profile.jpeg";
+
+function App() {
+  return <img width={100} src={profile} />;
+}
+
+export default App;
+
+```

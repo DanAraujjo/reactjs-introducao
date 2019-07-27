@@ -11,6 +11,12 @@ yarn add webpack-dev-server -D
 yarn add react react-dom
 ```
 
+> Para usar _PropTypes_
+
+```
+yarn add prop-types
+```
+
 Crie os arquivos:
 
 - **public/index.html**
